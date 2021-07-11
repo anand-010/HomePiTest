@@ -33,37 +33,39 @@ Tuya is not responsible for the results of MCU functions.
 //Define constant
 //If compilation occurs error:  #40:  expected an identifier    DISABLE = 0, for similar error reporting, you can include a header file in this stm32f1xx.h file
 //=============================================================================
-#ifndef TRUE
-#define      TRUE                1
+
+#ifndef T_TRUE
+#define      T_TRUE                1
 #endif
 
-#ifndef FALSE
-#define         FALSE            0
+#ifndef T_FALSE
+#define         T_FALSE            0
 #endif
 
-#ifndef NULL
-#define         NULL             ((void *) 0)
+#ifndef T_NULL
+#define         T_NULL             ((void *) 0)
 #endif
 
-#ifndef SUCCESS
-#define         SUCCESS          1
+#ifndef T_SUCCESS
+#define         T_SUCCESS          1
 #endif
 
-#ifndef ERROR
-#define         ERROR            0
+#ifndef T_ERROR
+#define         T_ERROR            0
 #endif
 
-#ifndef INVALID
-#define         INVALID          0xFF
+#ifndef T_INVALID
+#define         T_INVALID          0xFF
 #endif
 
-#ifndef ENABLE
-#define         ENABLE           1
+#ifndef T_ENABLE
+#define         T_ENABLE           1
 #endif
 
-#ifndef DISABLE
-#define         DISABLE          0
+#ifndef T_DISABLE
+#define         T_DISABLE          0
 #endif
+
 //=============================================================================
 //dp data point type
 //=============================================================================

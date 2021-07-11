@@ -128,13 +128,13 @@ void wifi_uart_write_frame(unsigned char fr_type, unsigned char fr_ver, unsigned
 static void heat_beat_check(void)
 {
     unsigned char length = 0;
-    static unsigned char mcu_reset_state = FALSE;
+    static unsigned char mcu_reset_state = T_FALSE;
     
-    if(FALSE == mcu_reset_state) {
-        length = set_wifi_uart_byte(length, FALSE);
-        mcu_reset_state = TRUE;
+    if(T_FALSE == mcu_reset_state) {
+        length = set_wifi_uart_byte(length, T_FALSE);
+        mcu_reset_state = T_TRUE;
     }else {
-        length = set_wifi_uart_byte(length, TRUE);
+        length = set_wifi_uart_byte(length, T_TRUE);
     }
     
     wifi_uart_write_frame(HEAT_BEAT_CMD, MCU_TX_VER, length);
@@ -237,7 +237,7 @@ static unsigned char data_point_handle(const unsigned char value[])
 
     if(dp_type != download_cmd[index].dp_type) {
         //Error message
-        return FALSE;
+        return T_FALSE;
     }else {
         ret = dp_download_handle(dp_id,value + 4,dp_len);
     }
@@ -466,7 +466,7 @@ void data_handle(unsigned short offset)
                 //
                 ret = data_point_handle((unsigned char *)wifi_data_process_buf + offset + DATA_START + i);
       
-                if(SUCCESS == ret) {
+                if(T_SUCCESS == ret) {
                     //Send success
                 }else {
                     //Send fault

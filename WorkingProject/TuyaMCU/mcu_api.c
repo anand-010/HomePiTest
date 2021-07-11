@@ -208,8 +208,8 @@ unsigned char mcu_dp_raw_update(unsigned char dpid,const unsigned char value[],u
 {
     unsigned short send_len = 0;
     
-    if(stop_update_flag == ENABLE)
-        return SUCCESS;
+    if(stop_update_flag == T_ENABLE)
+        return T_SUCCESS;
     //
     send_len = set_wifi_uart_byte(send_len,dpid);
     send_len = set_wifi_uart_byte(send_len,DP_TYPE_RAW);
@@ -221,7 +221,7 @@ unsigned char mcu_dp_raw_update(unsigned char dpid,const unsigned char value[],u
     
     wifi_uart_write_frame(STATE_UPLOAD_CMD,MCU_TX_VER,send_len);
     
-    return SUCCESS;
+    return T_SUCCESS;
 }
 
 /**
@@ -235,8 +235,8 @@ unsigned char mcu_dp_bool_update(unsigned char dpid,unsigned char value)
 {
     unsigned short send_len = 0;
     
-    if(stop_update_flag == ENABLE)
-        return SUCCESS;
+    if(stop_update_flag == T_ENABLE)
+        return T_SUCCESS;
     
     send_len = set_wifi_uart_byte(send_len,dpid);
     send_len = set_wifi_uart_byte(send_len,DP_TYPE_BOOL);
@@ -244,15 +244,15 @@ unsigned char mcu_dp_bool_update(unsigned char dpid,unsigned char value)
     send_len = set_wifi_uart_byte(send_len,0);
     send_len = set_wifi_uart_byte(send_len,1);
     //
-    if(value == FALSE) {
-        send_len = set_wifi_uart_byte(send_len,FALSE);
+    if(value == T_FALSE) {
+        send_len = set_wifi_uart_byte(send_len,T_FALSE);
     }else {
         send_len = set_wifi_uart_byte(send_len,1);
     }
     
     wifi_uart_write_frame(STATE_UPLOAD_CMD, MCU_TX_VER, send_len);
     
-    return SUCCESS;
+    return T_SUCCESS;
 }
 
 /**
@@ -266,8 +266,8 @@ unsigned char mcu_dp_value_update(unsigned char dpid,unsigned long value)
 {
     unsigned short send_len = 0;
     
-    if(stop_update_flag == ENABLE)
-        return SUCCESS;
+    if(stop_update_flag == T_ENABLE)
+        return T_SUCCESS;
     
     send_len = set_wifi_uart_byte(send_len,dpid);
     send_len = set_wifi_uart_byte(send_len,DP_TYPE_VALUE);
@@ -282,7 +282,7 @@ unsigned char mcu_dp_value_update(unsigned char dpid,unsigned long value)
     
     wifi_uart_write_frame(STATE_UPLOAD_CMD,MCU_TX_VER,send_len);
     
-    return SUCCESS;
+    return T_SUCCESS;
 }
 
 /**
@@ -297,8 +297,8 @@ unsigned char mcu_dp_string_update(unsigned char dpid,const unsigned char value[
 {
     unsigned short send_len = 0;
     
-    if(stop_update_flag == ENABLE)
-        return SUCCESS;
+    if(stop_update_flag == T_ENABLE)
+        return T_SUCCESS;
     //
     send_len = set_wifi_uart_byte(send_len,dpid);
     send_len = set_wifi_uart_byte(send_len,DP_TYPE_STRING);
@@ -310,7 +310,7 @@ unsigned char mcu_dp_string_update(unsigned char dpid,const unsigned char value[
     
     wifi_uart_write_frame(STATE_UPLOAD_CMD,MCU_TX_VER,send_len);
     
-    return SUCCESS;
+    return T_SUCCESS;
 }
 
 /**
@@ -324,8 +324,8 @@ unsigned char mcu_dp_enum_update(unsigned char dpid,unsigned char value)
 {
     unsigned short send_len = 0;
     
-    if(stop_update_flag == ENABLE)
-        return SUCCESS;
+    if(stop_update_flag == T_ENABLE)
+        return T_SUCCESS;
     
     send_len = set_wifi_uart_byte(send_len,dpid);
     send_len = set_wifi_uart_byte(send_len,DP_TYPE_ENUM);
@@ -337,7 +337,7 @@ unsigned char mcu_dp_enum_update(unsigned char dpid,unsigned char value)
     
     wifi_uart_write_frame(STATE_UPLOAD_CMD,MCU_TX_VER,send_len);
     
-    return SUCCESS;
+    return T_SUCCESS;
 }
 
 /**
@@ -351,8 +351,8 @@ unsigned char mcu_dp_fault_update(unsigned char dpid,unsigned long value)
 {
     unsigned short send_len = 0;
      
-    if(stop_update_flag == ENABLE)
-        return SUCCESS;
+    if(stop_update_flag == T_ENABLE)
+        return T_SUCCESS;
     
     send_len = set_wifi_uart_byte(send_len,dpid);
     send_len = set_wifi_uart_byte(send_len,DP_TYPE_BITMAP);
@@ -376,7 +376,7 @@ unsigned char mcu_dp_fault_update(unsigned char dpid,unsigned long value)
     
     wifi_uart_write_frame(STATE_UPLOAD_CMD, MCU_TX_VER, send_len);
 
-    return SUCCESS;
+    return T_SUCCESS;
 }
 
 #ifdef MCU_DP_UPLOAD_SYN
@@ -392,8 +392,8 @@ unsigned char mcu_dp_raw_update_syn(unsigned char dpid,const unsigned char value
 {
     unsigned short send_len = 0;
     
-    if(stop_update_flag == ENABLE)
-        return SUCCESS;
+    if(stop_update_flag == T_ENABLE)
+        return T_SUCCESS;
     //
     send_len = set_wifi_uart_byte(send_len,dpid);
     send_len = set_wifi_uart_byte(send_len,DP_TYPE_RAW);
@@ -405,7 +405,7 @@ unsigned char mcu_dp_raw_update_syn(unsigned char dpid,const unsigned char value
     
     wifi_uart_write_frame(STATE_UPLOAD_SYN_CMD,MCU_TX_VER,send_len);
     
-    return SUCCESS;
+    return T_SUCCESS;
 }
 
 /**
@@ -419,8 +419,8 @@ unsigned char mcu_dp_bool_update_syn(unsigned char dpid,unsigned char value)
 {
     unsigned short send_len = 0;
     
-    if(stop_update_flag == ENABLE)
-        return SUCCESS;
+    if(stop_update_flag == T_ENABLE)
+        return T_SUCCESS;
     
     send_len = set_wifi_uart_byte(send_len,dpid);
     send_len = set_wifi_uart_byte(send_len,DP_TYPE_BOOL);
@@ -428,15 +428,15 @@ unsigned char mcu_dp_bool_update_syn(unsigned char dpid,unsigned char value)
     send_len = set_wifi_uart_byte(send_len,0);
     send_len = set_wifi_uart_byte(send_len,1);
     //
-    if(value == FALSE) {
-        send_len = set_wifi_uart_byte(send_len,FALSE);
+    if(value == T_FALSE) {
+        send_len = set_wifi_uart_byte(send_len,T_FALSE);
     }else {
         send_len = set_wifi_uart_byte(send_len,1);
     }
     
     wifi_uart_write_frame(STATE_UPLOAD_SYN_CMD, MCU_TX_VER, send_len);
     
-    return SUCCESS;
+    return T_SUCCESS;
 }
 
 /**
@@ -450,8 +450,8 @@ unsigned char mcu_dp_value_update_syn(unsigned char dpid,unsigned long value)
 {
     unsigned short send_len = 0;
     
-    if(stop_update_flag == ENABLE)
-        return SUCCESS;
+    if(stop_update_flag == T_ENABLE)
+        return T_SUCCESS;
     
     send_len = set_wifi_uart_byte(send_len,dpid);
     send_len = set_wifi_uart_byte(send_len,DP_TYPE_VALUE);
@@ -466,7 +466,7 @@ unsigned char mcu_dp_value_update_syn(unsigned char dpid,unsigned long value)
     
     wifi_uart_write_frame(STATE_UPLOAD_SYN_CMD, MCU_TX_VER, send_len);
     
-    return SUCCESS;
+    return T_SUCCESS;
 }
 
 /**
@@ -481,8 +481,8 @@ unsigned char mcu_dp_string_update_syn(unsigned char dpid,const unsigned char va
 {
     unsigned short send_len = 0;
     
-    if(stop_update_flag == ENABLE)
-        return SUCCESS;
+    if(stop_update_flag == T_ENABLE)
+        return T_SUCCESS;
     //
     send_len = set_wifi_uart_byte(send_len,dpid);
     send_len = set_wifi_uart_byte(send_len,DP_TYPE_STRING);
@@ -494,7 +494,7 @@ unsigned char mcu_dp_string_update_syn(unsigned char dpid,const unsigned char va
     
     wifi_uart_write_frame(STATE_UPLOAD_SYN_CMD,MCU_TX_VER,send_len);
     
-    return SUCCESS;
+    return T_SUCCESS;
 }
 
 /**
@@ -508,8 +508,8 @@ unsigned char mcu_dp_enum_update_syn(unsigned char dpid,unsigned char value)
 {
     unsigned short send_len = 0;
     
-    if(stop_update_flag == ENABLE)
-        return SUCCESS;
+    if(stop_update_flag == T_ENABLE)
+        return T_SUCCESS;
     
     send_len = set_wifi_uart_byte(send_len,dpid);
     send_len = set_wifi_uart_byte(send_len,DP_TYPE_ENUM);
@@ -521,7 +521,7 @@ unsigned char mcu_dp_enum_update_syn(unsigned char dpid,unsigned char value)
     
     wifi_uart_write_frame(STATE_UPLOAD_SYN_CMD,MCU_TX_VER,send_len);
     
-    return SUCCESS;
+    return T_SUCCESS;
 }
 
 /**
@@ -535,8 +535,8 @@ unsigned char mcu_dp_fault_update_syn(unsigned char dpid,unsigned long value)
 {
     unsigned short send_len = 0;
      
-    if(stop_update_flag == ENABLE)
-        return SUCCESS;
+    if(stop_update_flag == T_ENABLE)
+        return T_SUCCESS;
     
     send_len = set_wifi_uart_byte(send_len,dpid);
     send_len = set_wifi_uart_byte(send_len,DP_TYPE_BITMAP);
@@ -560,7 +560,7 @@ unsigned char mcu_dp_fault_update_syn(unsigned char dpid,unsigned long value)
     
     wifi_uart_write_frame(STATE_UPLOAD_SYN_CMD,MCU_TX_VER,send_len);
 
-    return SUCCESS;
+    return T_SUCCESS;
 }
 #endif
 
@@ -718,7 +718,7 @@ void wifi_protocol_init(void)
     rx_buf_in = (unsigned char *)wifi_uart_rx_buf;
     rx_buf_out = (unsigned char *)wifi_uart_rx_buf;
     
-    stop_update_flag = DISABLE;
+    stop_update_flag = T_DISABLE;
     
 #ifndef WIFI_CONTROL_SELF_MODE
     wifi_work_state = WIFI_SATE_UNKNOW;
@@ -892,8 +892,8 @@ unsigned char stream_trans_send(unsigned int id, unsigned char *buffer, unsigned
     unsigned int pack_num = 0;
     unsigned int rest_length = 0;
 
-    if(stop_update_flag == ENABLE)
-        return ERROR;
+    if(stop_update_flag == T_ENABLE)
+        return T_ERROR;
 
     pack_num = buf_len / STREM_PACK_LEN;
     rest_length = buf_len - pack_num * STREM_PACK_LEN;
@@ -909,10 +909,10 @@ unsigned char stream_trans_send(unsigned int id, unsigned char *buffer, unsigned
             this_len = STREM_PACK_LEN;
         }
 
-        if(ERROR == stream_trans(id, map_offset, buffer + map_offset, this_len)) {
+        if(T_ERROR == stream_trans(id, map_offset, buffer + map_offset, this_len)) {
             //The MCU is being upgraded and cannot be streamed
             //printf("is upgrade\n");
-            return ERROR;
+            return T_ERROR;
         }
         
         #error "Please complete the Stream service delivery code by yourself and delete the line"
@@ -931,7 +931,7 @@ unsigned char stream_trans_send(unsigned int id, unsigned char *buffer, unsigned
             When the transmission is successful, call this function again to send the next packet. Note that the packet offset should be increased.  */
     }
     
-    return SUCCESS;
+    return T_SUCCESS;
 }
 
 /**
@@ -955,8 +955,8 @@ unsigned char maps_stream_trans_send(unsigned int id, unsigned char sub_id, unsi
     unsigned int rest_length = 0;
     unsigned char pro_ver = 0; //Map service protocol version, default is 0
 
-    if(stop_update_flag == ENABLE)
-        return SUCCESS;
+    if(stop_update_flag == T_ENABLE)
+        return T_SUCCESS;
 
     pack_num = buf_len / STREM_PACK_LEN;
     rest_length = buf_len - pack_num * STREM_PACK_LEN;
@@ -972,10 +972,10 @@ unsigned char maps_stream_trans_send(unsigned int id, unsigned char sub_id, unsi
             this_len = STREM_PACK_LEN;
         }
 
-        if(ERROR == maps_stream_trans(pro_ver, id, sub_id, sub_id_pro_mode, map_offset, buffer + map_offset, this_len)) {
+        if(T_ERROR == maps_stream_trans(pro_ver, id, sub_id, sub_id_pro_mode, map_offset, buffer + map_offset, this_len)) {
             //The MCU is being upgraded and cannot be streamed
             //printf("is upgrade\n");
-            return ERROR;
+            return T_ERROR;
         }
         
         #error "Please complete the Stream service delivery code by yourself and delete the line"
@@ -994,7 +994,7 @@ unsigned char maps_stream_trans_send(unsigned int id, unsigned char sub_id, unsi
             When the transmission is successful, call this function again to send the next packet. Note that the packet offset should be increased.  */
     }
     
-    return SUCCESS;
+    return T_SUCCESS;
 }
 #endif
 

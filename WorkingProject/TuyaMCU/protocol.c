@@ -209,10 +209,10 @@ static unsigned char dp_download_switch_1_handle(const unsigned char value[], un
   
     //处理完DP数据后应有反馈
     ret = mcu_dp_bool_update(DPID_SWITCH_1,switch_1);
-    if(ret == SUCCESS)
-        return SUCCESS;
+    if(ret == T_SUCCESS)
+        return T_SUCCESS;
     else
-        return ERROR;
+        return T_ERROR;
 }
 /*****************************************************************************
 Function name : dp_download_switch_2_handle
@@ -238,10 +238,10 @@ static unsigned char dp_download_switch_2_handle(const unsigned char value[], un
   
     //处理完DP数据后应有反馈
     ret = mcu_dp_bool_update(DPID_SWITCH_2,switch_2);
-    if(ret == SUCCESS)
-        return SUCCESS;
+    if(ret == T_SUCCESS)
+        return T_SUCCESS;
     else
-        return ERROR;
+        return T_ERROR;
 }
 /*****************************************************************************
 Function name : dp_download_switch_3_handle
@@ -267,10 +267,10 @@ static unsigned char dp_download_switch_3_handle(const unsigned char value[], un
   
     //处理完DP数据后应有反馈
     ret = mcu_dp_bool_update(DPID_SWITCH_3,switch_3);
-    if(ret == SUCCESS)
-        return SUCCESS;
+    if(ret == T_SUCCESS)
+        return T_SUCCESS;
     else
-        return ERROR;
+        return T_ERROR;
 }
 /*****************************************************************************
 Function name : dp_download_switch_4_handle
@@ -296,10 +296,10 @@ static unsigned char dp_download_switch_4_handle(const unsigned char value[], un
   
     //处理完DP数据后应有反馈
     ret = mcu_dp_bool_update(DPID_SWITCH_4,switch_4);
-    if(ret == SUCCESS)
-        return SUCCESS;
+    if(ret == T_SUCCESS)
+        return T_SUCCESS;
     else
-        return ERROR;
+        return T_ERROR;
 }
 /*****************************************************************************
 Function name : dp_download_countdown_1_handle
@@ -323,10 +323,10 @@ static unsigned char dp_download_countdown_1_handle(const unsigned char value[],
     
     //处理完DP数据后应有反馈
     ret = mcu_dp_value_update(DPID_COUNTDOWN_1,countdown_1);
-    if(ret == SUCCESS)
-        return SUCCESS;
+    if(ret == T_SUCCESS)
+        return T_SUCCESS;
     else
-        return ERROR;
+        return T_ERROR;
 }
 /*****************************************************************************
 Function name : dp_download_countdown_2_handle
@@ -350,10 +350,10 @@ static unsigned char dp_download_countdown_2_handle(const unsigned char value[],
     
     //处理完DP数据后应有反馈
     ret = mcu_dp_value_update(DPID_COUNTDOWN_2,countdown_2);
-    if(ret == SUCCESS)
-        return SUCCESS;
+    if(ret == T_SUCCESS)
+        return T_SUCCESS;
     else
-        return ERROR;
+        return T_ERROR;
 }
 /*****************************************************************************
 Function name : dp_download_countdown_3_handle
@@ -377,10 +377,10 @@ static unsigned char dp_download_countdown_3_handle(const unsigned char value[],
     
     //处理完DP数据后应有反馈
     ret = mcu_dp_value_update(DPID_COUNTDOWN_3,countdown_3);
-    if(ret == SUCCESS)
-        return SUCCESS;
+    if(ret == T_SUCCESS)
+        return T_SUCCESS;
     else
-        return ERROR;
+        return T_ERROR;
 }
 /*****************************************************************************
 Function name : dp_download_countdown_4_handle
@@ -404,10 +404,10 @@ static unsigned char dp_download_countdown_4_handle(const unsigned char value[],
     
     //处理完DP数据后应有反馈
     ret = mcu_dp_value_update(DPID_COUNTDOWN_4,countdown_4);
-    if(ret == SUCCESS)
-        return SUCCESS;
+    if(ret == T_SUCCESS)
+        return T_SUCCESS;
     else
-        return ERROR;
+        return T_ERROR;
 }
 /*****************************************************************************
 Function name : dp_download_switch_all_handle
@@ -433,10 +433,10 @@ static unsigned char dp_download_switch_all_handle(const unsigned char value[], 
   
     //处理完DP数据后应有反馈
     ret = mcu_dp_bool_update(DPID_SWITCH_ALL,switch_all);
-    if(ret == SUCCESS)
-        return SUCCESS;
+    if(ret == T_SUCCESS)
+        return T_SUCCESS;
     else
-        return ERROR;
+        return T_ERROR;
 }
 /*****************************************************************************
 Function name : dp_download_relay_status_handle
@@ -470,10 +470,10 @@ static unsigned char dp_download_relay_status_handle(const unsigned char value[]
     
     //处理完DP数据后应有反馈
     ret = mcu_dp_enum_update(DPID_RELAY_STATUS, relay_status);
-    if(ret == SUCCESS)
-        return SUCCESS;
+    if(ret == T_SUCCESS)
+        return T_SUCCESS;
     else
-        return ERROR;
+        return T_ERROR;
 }
 /*****************************************************************************
 Function name : dp_download_light_mode_handle
@@ -507,10 +507,10 @@ static unsigned char dp_download_light_mode_handle(const unsigned char value[], 
     
     //处理完DP数据后应有反馈
     ret = mcu_dp_enum_update(DPID_LIGHT_MODE, light_mode);
-    if(ret == SUCCESS)
-        return SUCCESS;
+    if(ret == T_SUCCESS)
+        return T_SUCCESS;
     else
-        return ERROR;
+        return T_ERROR;
 }
 /*****************************************************************************
 Function name : dp_download_backlight_switch_handle
@@ -536,10 +536,10 @@ static unsigned char dp_download_backlight_switch_handle(const unsigned char val
   
     //处理完DP数据后应有反馈
     ret = mcu_dp_bool_update(DPID_BACKLIGHT_SWITCH,backlight_switch);
-    if(ret == SUCCESS)
-        return SUCCESS;
+    if(ret == T_SUCCESS)
+        return T_SUCCESS;
     else
-        return ERROR;
+        return T_ERROR;
 }
 /*****************************************************************************
 Function name : dp_download_switch_inching_handle
@@ -569,10 +569,10 @@ static unsigned char dp_download_switch_inching_handle(const unsigned char value
     
     //处理完DP数据后应有反馈
     ret = mcu_dp_string_update(DPID_SWITCH_INCHING,value, length);
-    if(ret == SUCCESS)
-        return SUCCESS;
+    if(ret == T_SUCCESS)
+        return T_SUCCESS;
     else
-        return ERROR;
+        return T_ERROR;
 }
 /*****************************************************************************
 Function name : dp_download_backlight_handle
@@ -596,10 +596,10 @@ static unsigned char dp_download_backlight_handle(const unsigned char value[], u
     
     //处理完DP数据后应有反馈
     ret = mcu_dp_value_update(DPID_BACKLIGHT,backlight);
-    if(ret == SUCCESS)
-        return SUCCESS;
+    if(ret == T_SUCCESS)
+        return T_SUCCESS;
     else
-        return ERROR;
+        return T_ERROR;
 }
 /*****************************************************************************
 Function name : dp_download_colour_handle
@@ -651,10 +651,10 @@ static unsigned char dp_download_colour_handle(const unsigned char value[], unsi
     
     //处理完DP数据后应有反馈
     ret = mcu_dp_enum_update(DPID_COLOUR, colour);
-    if(ret == SUCCESS)
-        return SUCCESS;
+    if(ret == T_SUCCESS)
+        return T_SUCCESS;
     else
-        return ERROR;
+        return T_ERROR;
 }
 
 
